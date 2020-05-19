@@ -49,7 +49,7 @@ int t_max_con_falla=0;
 #include <string.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[])
+int main()
 {   
     printf("\nInicio de la prueba\n");
 	printf("\nPara cancelar presione ctrl + c\n");
