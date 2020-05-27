@@ -49,15 +49,15 @@ int t_max_con_falla=0;
 #include <string.h>
 #include <stdlib.h>
 
-int main()
+int main(int argc, char *argv[])
 {   
-    printf("\nInicio de la prueba\n");
-	printf("\nPara cancelar presione ctrl + c\n");
+    printf("\nTest start\n");
+	printf("\nPress ctrl + c to cancel\n");
 	//getch();
 	while (terminar==0)
 {	
     float t_milis=(float)microsegundos/10000;
-    printf("tiempo entre notas: %4.2f milisegundos\n",t_milis);
+    printf("delay between notes: %4.2f milisegundos\n",t_milis);
 
     tempo_usec[2]=microsegundos;
     tempo_usec[1]=microsegundos>>8;
@@ -119,15 +119,15 @@ int main()
 		strcat(comando,pianoteq);
 		strcat(comando,comilla);
 		strcat(comando,opciones);
-		printf("el comando es: %s; tamaño comando: %i\n",comando,strlen(comando));
+		printf("Command to run is: %s; string size: %i\n",comando,strlen(comando));
 		system(comando);
 	}
 	
 	
 	 char respuesta[8];
 	 
-	 printf("Intento nro %i\n",intento);
-	 printf("Fallo el audio? s/n, para terminar t\n");
+	 printf("Try number %i\n",intento);
+	 printf("Did audio fail? y/n, t to terminate \n");
 	 scanf("%s",respuesta);
       
       
@@ -146,7 +146,7 @@ int main()
 	 else if (respuesta[0]==116) 
 	 {
 		float t_final=(float)t_min_sin_falla/10000;
-		printf("Iteraciones totales %i, delta tiempo final: %4.2f\n",intento,t_final);
+		printf("Total attemps: %i, final delay between notes: %4.2f\n",intento,t_final);
 		terminar++; 
 		
 		
